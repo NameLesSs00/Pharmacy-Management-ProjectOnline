@@ -1,4 +1,4 @@
-const API_URL = "http://pharmaproject.runasp.net/api/drugs";
+const API_URL = "https://pharmaproject.runasp.net/api/drugs";
 const TOKEN = localStorage.getItem("TOKEN");
 
 // -------------------- Utility Functions --------------------

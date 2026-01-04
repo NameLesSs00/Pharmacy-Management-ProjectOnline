@@ -1,6 +1,6 @@
-const API_URL = "http://pharmaproject.runasp.net/api/Admin";
-const API_ADD_URL = "http://pharmaproject.runasp.net/api/Admin/signup";
-const LOGS_API_URL = "http://pharmaproject.runasp.net/api/Admin/logs";
+const API_URL = "https://pharmaproject.runasp.net/api/Admin";
+const API_ADD_URL = "https://pharmaproject.runasp.net/api/Admin/signup";
+const LOGS_API_URL = "https://pharmaproject.runasp.net/api/Admin/logs";
 const TOKEN = localStorage.getItem("TOKEN");
 let userData = [];
 // ================= Fetch Users =================

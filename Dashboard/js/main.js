@@ -2,7 +2,7 @@
 const AUTH_TOKEN = localStorage.getItem("TOKEN");
 // dashboard cards data
 
-const DASHBOARD_API_URL = "http://pharmaproject.runasp.net/api/dashboard/cards";
+const DASHBOARD_API_URL = "https://pharmaproject.runasp.net/api/dashboard/cards";
 async function getDashboardData() {
   try {
     const response = await fetch(DASHBOARD_API_URL, {
@@ -69,7 +69,7 @@ refreshBtn.addEventListener("click", async (e) => {
 
 async function getBestSelling() {
   try {
-    const response = await fetch("http://pharmaproject.runasp.net/api/dashboard/most-sold", {
+    const response = await fetch("https://pharmaproject.runasp.net/api/dashboard/most-sold", {
       headers: { Authorization: `Bearer ${AUTH_TOKEN}` }
     });
     const data = await response.json();
@@ -79,7 +79,7 @@ async function getBestSelling() {
   }
 }
 // best-selling products
-const BEST_SELLING_API_URL = "http://pharmaproject.runasp.net/api/dashboard/most-sold";
+const BEST_SELLING_API_URL = "https://pharmaproject.runasp.net/api/dashboard/most-sold";
 
 async function getBestSelling() {
   try {
@@ -123,7 +123,7 @@ function renderBestSelling(products) {
 document.addEventListener("DOMContentLoaded", getBestSelling);
 
 // low stock products
-const LOW_STOCK_API_URL = "http://pharmaproject.runasp.net/api/dashboard/low-stock";
+const LOW_STOCK_API_URL = "https://pharmaproject.runasp.net/api/dashboard/low-stock";
 
 async function getLowStock() {
   try {

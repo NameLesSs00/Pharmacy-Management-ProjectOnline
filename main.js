@@ -1,6 +1,6 @@
 
-const LOGIN_API = "http://pharmaproject.runasp.net/api/Admin/login";
-const ADMINS_API = "http://pharmaproject.runasp.net/api/Admin";
+const LOGIN_API = "https://pharmaproject.runasp.net/api/Admin/login";
+const ADMINS_API = "https://pharmaproject.runasp.net/api/Admin";
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("ADMIN_DATA", JSON.stringify(currentAdmin));
 
             // ================= REDIRECT =================
-            window.location.href = "../Dashboard/index.html";
+            window.location.href = "Dashboard/index.html";
 
         } catch (err) {
             console.error("LOGIN ERROR:", err);

@@ -1,7 +1,7 @@
 let cart = [];
 // API Configuration
 if (typeof API_BASE_URL === 'undefined') {
-    var API_BASE_URL = "http://pharmaproject.runasp.net/api";
+    var API_BASE_URL = "https://pharmaproject.runasp.net/api";
 }
 if (typeof AUTH_TOKEN === 'undefined') {
     var AUTH_TOKEN = localStorage.getItem("TOKEN");
@@ -9,7 +9,7 @@ if (typeof AUTH_TOKEN === 'undefined') {
 
 async function loadCashierProducts() {
     try {
-        const res = await fetch("http://pharmaproject.runasp.net/api/Drugs", {
+        const res = await fetch("https://pharmaproject.runasp.net/api/Drugs", {
             headers: {
                 Authorization: `Bearer ${AUTH_TOKEN}`
             }
@@ -34,7 +34,7 @@ async function loadCashierProducts() {
                     data-stock="${stockAmount}">
                     <div class="card pt-2 d-flex ${isOutOfStock ? 'opacity-100' : ''}">
                         <div class="d-flex justify-content-center item-img">
-                            <img src="http://pharmaproject.runasp.net${item.imageUrl}"
+                            <img src="https://pharmaproject.runasp.net${item.imageUrl}"
                                 class="card-img-top"
                                 alt="${item.name}"
                                 onerror="this.src='https://via.placeholder.com/150?text=No+Image'">
@@ -499,7 +499,7 @@ if (document.readyState === "loading") {
 
 window.addEventListener("load", updateAdminName);
 
-const LOGOUT_API = "http://pharmaproject.runasp.net/api/Admin/logout";
+const LOGOUT_API = "https://pharmaproject.runasp.net/api/Admin/logout";
 
 document.addEventListener("click", async (e) => {
     const logoutBtn = e.target.closest(".logout-btn");

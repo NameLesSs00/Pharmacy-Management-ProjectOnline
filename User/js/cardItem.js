@@ -9,7 +9,7 @@ if (!drugId) {
     console.error("Item container not found");
     } 
     else {
-    fetch(`http://pharmaproject.runasp.net/api/Drugs/${drugId}`, {
+    fetch(`https://pharmaproject.runasp.net/api/Drugs/${drugId}`, {
         method: "GET",
         headers: {
         Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJzdXBlcl9hZG1pbiIsImV4cCI6MTc2NzgwMTU5NywiaXNzIjoiUGhhcm1hY3lBcGkiLCJhdWQiOiJQaGFybWFjeUZyb250ZW5kIn0.RZ6fScSDEacNw6ADoNk-FSXeUenSHbKFLHmMibY0bnA"
@@ -20,7 +20,7 @@ if (!drugId) {
         const imageSrc = drug.imageUrl
         ? (drug.imageUrl.startsWith("http")
             ? drug.imageUrl
-            : "http://pharmaproject.runasp.net" + drug.imageUrl)
+            : "https://pharmaproject.runasp.net" + drug.imageUrl)
         : "imgs/mcdn.jpg";
         container.innerHTML += `
         <div class="item-big-card">

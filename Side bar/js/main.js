@@ -32,7 +32,7 @@ if (document.readyState === "loading") {
 
 window.addEventListener("load", updateAdminName);
 
-const LOGOUT_API = "http://pharmaproject.runasp.net/api/Admin/logout";
+const LOGOUT_API = "https://pharmaproject.runasp.net/api/Admin/logout";
 
 document.addEventListener("click", async (e) => {
     const logoutBtn = e.target.closest(".logout-btn");

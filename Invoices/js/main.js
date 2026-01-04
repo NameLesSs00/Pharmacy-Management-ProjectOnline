@@ -1,6 +1,6 @@
 // API Configuration
 if (typeof API_BASE_URL === 'undefined') {
-    var API_BASE_URL = "http://pharmaproject.runasp.net/api";
+    var API_BASE_URL = "https://pharmaproject.runasp.net/api";
 }
 if (typeof AUTH_TOKEN === 'undefined') {
     var AUTH_TOKEN = localStorage.getItem("TOKEN");
