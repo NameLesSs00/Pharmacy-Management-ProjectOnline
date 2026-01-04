@@ -60,7 +60,7 @@ document.addEventListener("click", async (e) => {
         localStorage.removeItem("userData");
         localStorage.removeItem("TOKEN");
 
-        window.location.href = "/index.html";
+        window.location.href = "/Pharmacy-Management-ProjectOnline/index.html";
     }
 });
 
