@@ -15,5 +15,5 @@ document.addEventListener("click", function (e) {
     }
 });
 function leaveSite() {
-    window.location.replace("/index.html");
+    window.location.replace("/Pharmacy-Management-ProjectOnline/index.html");
 }
