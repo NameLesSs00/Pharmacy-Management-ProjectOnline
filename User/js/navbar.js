@@ -3,14 +3,17 @@ document.addEventListener("click", function (e) {
     if (!link) return;
 
     const navLinks = document.querySelectorAll("#nav-links .nav-link");
-    const contactBox = document.querySelector(".contact");
+    const contactBox = document.querySelector(".leave");
     navLinks.forEach(l => l.classList.remove("active"));
-    contactBox?.classList.remove("active-contact");
+    contactBox?.classList.remove("active-leave");
     
     // Contact
-    if (link.parentElement.parentElement.classList.contains("contact")) {
-        contactBox?.classList.add("active-contact");
+    if (link.parentElement.parentElement.classList.contains("leave")) {
+        contactBox?.classList.add("active-leave");
     } else {
         link.classList.add("active");
     }
 });
+function leaveSite() {
+    window.location.replace("/index.html");
+}

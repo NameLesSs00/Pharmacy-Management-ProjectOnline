@@ -52,7 +52,7 @@ async function loadCashierProducts() {
                                 <button class="btn btn-primary card-btn" 
                                     onclick="addItem(this)"
                                     ${isOutOfStock ? 'disabled' : ''}>
-                                    ${isOutOfStock ? 'Out of Stock' : 'Add'}
+                                    Add
                                 </button>
                                 <div class="counter align-items-center gap-2" style="display:none;">
                                     <button class="btn btn-outline-secondary btn-sm" onclick="decrease(this)">-</button>

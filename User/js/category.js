@@ -13,7 +13,7 @@
     const res = await fetch("https://pharmaproject.runasp.net/api/Drugs", {
       method: "GET",
       headers: {
-        Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJzdXBlcl9hZG1pbiIsImV4cCI6MTc2NzgwMTU5NywiaXNzIjoiUGhhcm1hY3lBcGkiLCJhdWQiOiJQaGFybWFjeUZyb250ZW5kIn0.RZ6fScSDEacNw6ADoNk-FSXeUenSHbKFLHmMibY0bnA"
+        Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJzdXBlcl9hZG1pbiIsImV4cCI6MTc2ODE2MzU0NiwiaXNzIjoiUGhhcm1hY3lBcGkiLCJhdWQiOiJQaGFybWFjeUZyb250ZW5kIn0.1okNodAHzCO9HvT-n_tGbpwgiocN_9Xk1we075fXnkk"
       }
     });
     const data = await res.json();
@@ -24,22 +24,27 @@
 
     data.forEach(drug => {
       const imageSrc = drug.imageUrl 
-        ? (drug.imageUrl.startsWith("http") 
+        ? (drug.imageUrl.startsWith("https") 
             ? drug.imageUrl 
             : "https://pharmaproject.runasp.net" + drug.imageUrl) 
         : "imgs/placeholder.jpg";
 
       const drugId = drug.drugId || drug.id;
-
+      const isOutOfStock = (drug.shelfAmount === 0 || drug.shelfAmount === null) && 
+        (drug.storedAmount === 0 || drug.storedAmount === null);
       const div = document.createElement("div");
       div.className = "col-6 col-sm-4 col-md-3 col-lg-2 items-card";
       div.innerHTML = `
         <a href="./cardItem.html?id=${drugId}">
           <div class="card d-flex flex-column text-center align-items-center">
             <img src="${imageSrc}" class="card-img-top" alt="img">
-            <div class="card-body">
+            <div class="card-body d-flex flex-column">
               <h5 class="card-title">${drug.name}</h5>
-              <p class="card-text">${drug.sellingPrice} EGP</p>
+              ${isOutOfStock 
+                ? '<p class="card-text text-danger fw-bold mb-2">Out of Stock!</p>' 
+                : ''
+              }
+              <p class="card-text mt-auto">${drug.sellingPrice} EGP</p>
             </div>
           </div>
         </a>
@@ -92,6 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
     });
-
 });
+
 
